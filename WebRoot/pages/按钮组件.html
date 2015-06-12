@@ -13,8 +13,9 @@
     <body>
 
         <button id="mybutton" class="btn btn-primary"
-                data-loading-text="加载中">查看内容</button>
-
+                data-loading-text="加载中"
+                data-complete-text="加载完毕">查看内容</button>
+        <br>
         <button class="btn btn-primary" data-toggle="button">单按钮切换</button>
         <br>
         <div class="btn-group" data-toggle="buttons">
@@ -40,7 +41,8 @@
                 var mybtn  = $(this);
                 mybtn.button("loading");
                 
-                setTimeout(function(){mybtn.button("reset")},2000);
+                //setTimeout(function(){mybtn.button("reset")},2000);
+                setTimeout(function(){mybtn.button("complete")},2000);
             });
         </script>
     </body>
