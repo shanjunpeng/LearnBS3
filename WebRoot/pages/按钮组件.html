@@ -12,30 +12,36 @@
     </head>
     <body>
 
-        <div class="alert alert-success" >
-            <button class="close" data-dismiss="alert">
-                <span aria-hidden="true">&times;</span>
-                <span class="sr-only">关闭</span>
-            </button>
-            成功警告框
+        <button id="mybutton" class="btn btn-primary"
+                data-loading-text="加载中">查看内容</button>
+
+        <button class="btn btn-primary" data-toggle="button">单按钮切换</button>
+        <br>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-info active"><input type="checkbox" autocomplete="off" checked>选项1</label>
+            <label class="btn btn-info"><input type="checkbox" autocomplete="off">选项2</label>
+            <label class="btn btn-info"><input type="checkbox" autocomplete="off">选项3</label>
         </div>
+        <br>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-success" ><input type="radio" autocomplete="off">选项1</label>
+            <label class="btn btn-success" ><input type="radio" autocomplete="off">选项2</label>
+            <label class="btn btn-success" ><input type="radio" autocomplete="off">选项3</label>
+        </div>
+
 
         <script type="text/javascript" src="http://cdn.gbtags.com/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript"
         src="http://cdn.gbtags.com/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
         <script type="text/javascript">
-            $(document).off('.data-api');
-            $(".close").alert();
-            $(".close").click(function(){
-                $(".close").alert("close");
+            //$(document).off('.data-api');
+            $("#mybutton").click(function(){
+                var mybtn  = $(this);
+                mybtn.button("loading");
                 
+                setTimeout(function(){mybtn.button("reset")},2000);
             });
-            $(".alert").on("closed.bs.alert",function(){
-                $("body").append("已关闭警告框");
-                
-            });
-        
         </script>
     </body>
 </html>
