@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootstrap3 CSS</title>
+        <link
+            href="http://cdn.gbtags.com/twitter-bootstrap/3.2.0/css/bootstrap.css"
+            rel="stylesheet" media="screen">
+        <style type="text/css">
+        </style>
+    </head>
+    <body>
+
+        <button class="btn btn-danger" data-toggle="popover">弹出提示按钮</button>
+
+        <script type="text/javascript" src="http://cdn.gbtags.com/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="http://cdn.gbtags.com/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).off('.data-api');
+            /*
+             * 和工具栏提示类似，弹出框组件的自定义选项：
+placement:'right' //定义工具条位置
+animation: true　//定义是否有动画效果
+delay: { "show": 500, "hide": 100 } //定义延迟效果，此处定义显示延迟和隐藏延迟时间(毫秒)
+html: false, //定义是否可以添加html内容到提示中
+trigger: 'click' //触发工具条方式
+template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+viewport: { "selector": "body", "padding": 0 }, //视图定义，在body标签中显示
+title: '缺省提示' //如果没有定义title属性，定义缺省的提示文字
+常用方法如下：
+$('#element').popover('show');
+$('#element').popover('hide');
+$('#element').popover('toggle');
+$('#element').popover('destroy');
+其它的自定义事件：
+show.bs.popover
+shown.bs.popover
+hide.bs.popover
+hiden.bs.popover
+             */
+            
+            
+            $("button").popover({
+                placement:"right",
+                animation:true,
+                delay:{show:100,hide:100},
+                html:true,
+                trigger:"click",
+                title:"lorem",
+                content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, cupiditate, repellendus. Alias, beatae, magnam, iure, eveniet eligendi eum ipsum ut nemo adipisci dolore error voluptatum aliquid asperiores molestiae maiores blanditiis.",
+                viewport:{selector:"body",padding:0},
+                template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+            });
+            $("button").popover("show");
+            var count=0;
+            $("button").on("show.bs.popover",function(){
+                count++;
+                $("body").append("<p>"+count+"</p>");
+                
+            });
+            $("button").on("hide.bs.popover",function(){
+                
+                
+            });
+        
+        </script>
+    </body>
+</html>

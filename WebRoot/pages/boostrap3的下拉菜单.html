@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootstrap3 CSS</title>
+        <link
+            href="http://cdn.gbtags.com/twitter-bootstrap/3.2.0/css/bootstrap.css"
+            rel="stylesheet" media="screen">
+        <style type="text/css"></style>
+    </head>
+    <body>
+        <div id="mydropdown" class="dropdown">
+            <button id="dropdownBtn" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>项目1</li>
+                <li>项目2</li>
+            </ul>
+        </div>
+
+        <script type="text/javascript"
+        src="http://cdn.gbtags.com/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="http://cdn.gbtags.com/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(document).off('.data-api');
+		
+            //即使使用js也需要定义data-toggle="dropdown"属性
+            $("#dropdownBtn").dropdown("toggle");
+            $("#mydropdown").on("show.bs.dropdown",function(){
+                alert("123");
+            });
+		
+        </script>
+    </body>
+
+</html>

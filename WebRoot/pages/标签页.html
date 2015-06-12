@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootstrap3 CSS</title>
+        <link
+            href="http://cdn.gbtags.com/twitter-bootstrap/3.2.0/css/bootstrap.css"
+            rel="stylesheet" media="screen">
+        <style type="text/css">
+        </style>
+    </head>
+    <body>
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#home" data-toggle="tab">首页</a></li>
+            <li><a href="#setting" data-toggle="tab">设置</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="home">首页相关内容</div>
+            <div class="tab-pane fade" id="setting">设置相关内容</div>
+        </div>
+        
+        
+        
+        <script type="text/javascript" src="http://cdn.gbtags.com/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="http://cdn.gbtags.com/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            //$(document).off('.data-api');
+            
+            $("#myTab").find("a").last().tab("show");
+            var count=0;
+            $("#myTab").find("a").on("show.bs.tab",function(){
+                count++;
+                $(".tab-pane.active").append("<br>事件添加内容"+count);
+                
+            });
+        
+        </script>
+    </body>
+</html>
