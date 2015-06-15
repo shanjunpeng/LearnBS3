@@ -1,0 +1,130 @@
+<div id="Layer1"  style="position:absolute; width:200px; height:115px; z-index:1">
+
+
+    <div id="Layer3" style="position:absolute; width:256px; height:344px; z-index:1; left: 416px; top: -393px; visibility: hidden;"> 
+
+        <table  class="searchTable" border="1" cellspacing="0" cellpadding="3" align="center">
+            <tr  class="listPageTitleTd">
+                <td>&nbsp;</td>
+                <td>名称</td>
+                <td>CIQ2000代码</td>
+            </tr>
+            <%
+            List disqualificationContentTypeList = inspiteminfo
+            .getDeclTypeList();
+            HashMap disqualificationContentitem = null;
+            for (int i = 0; i < disqualificationContentTypeList.size(); i++) {
+            disqualificationContentitem = (HashMap) disqualificationContentTypeList
+            .get(i);
+            if (declgoodsbo.getQuarContCodes().indexOf(
+            (String) disqualificationContentitem.get("CIQ2Kcode")) != -1) {
+            %>
+            <tr class="modifyTableButtonTd">
+                <td ><input type="checkbox" name="chkSelf"  <%if(declgoodsbo.getQDisquaContCodes().indexOf((String)disqualificationContentitem.get("CIQ2Kcode"))!=-1){%> checked <%}%> value="<%=disqualificationContentitem
+                            .get("CIQ2Kcode")%>" onClick="isCheck(this,'Q_DISQUA_CONT_CODES')"></td>
+
+                <td ><%=disqualificationContentitem.get("Name")%></td>
+                <td ><%=disqualificationContentitem
+                    .get("CIQ2Kcode")%></td>
+            </tr>
+            <%
+            }
+            }
+            %>	 
+            <tr >
+                <td colspan="4"  align="right">
+                    <input name="actionbut12" type="button" class="button" onClick="MM_showHideLayers('Layer3','','hidden');" value="确定" funType="searchData">
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div id="Layer2" style="position:absolute; width:214px; height:245px; z-index:1; left: 204px; top: -370px; visibility: hidden;"> 
+
+
+        <table  class="searchTable" border="1" cellspacing="0" cellpadding="3" align="center">
+            <tr  class="listPageTitleTd">
+                <td>&nbsp;</td>
+                <td>名称</td>
+                <td>CIQ2000代码</td>
+            </tr>
+
+
+
+            <%
+            disqualificationContentTypeList = inspiteminfo
+            .getInspectionTypeList();
+            disqualificationContentitem = null;
+            for (int i = 0; i < disqualificationContentTypeList.size(); i++) {
+
+            disqualificationContentitem = (HashMap) disqualificationContentTypeList
+            .get(i);
+            if (declgoodsbo.getInsContCodes().indexOf(
+            (String) disqualificationContentitem.get("CIQ2Kcode")) != -1) {
+            %>
+
+
+
+            <tr class="modifyTableButtonTd">
+                <td ><input type="checkbox" name="chkSelf" <%if(declgoodsbo.getIDisquaContCodes().indexOf((String)disqualificationContentitem.get("CIQ2Kcode"))!=-1){%> checked <%}%> value="<%=disqualificationContentitem
+                            .get("CIQ2Kcode")%>" onClick="isCheck(this,'I_DISQUA_CONT_CODES')"></td>
+                <td ><%=disqualificationContentitem.get("Name")%></td>
+                <td ><%=disqualificationContentitem
+                    .get("CIQ2Kcode")%></td>
+            </tr > 
+            <%
+            }
+            }
+            %>	 
+            <tr > 
+                <td colspan="12"  align="right">
+                    <input name="actionbut12" type="button" class="button" onClick="MM_showHideLayers('Layer2','','hidden');" value="确定" funType="searchData">
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="Layer4" style="position:absolute; width:214px; height:245px; z-index:1; left: 211px; top: -464px; visibility: hidden;OVERFLOW-y:auto;"> 
+
+
+        <table  class="searchTable" border="1" cellspacing="0" cellpadding="3" align="center">
+            <tr  class="listPageTitleTd">
+                <td>&nbsp;</td>
+                <td>名称</td>
+                <td>代码</td>
+            </tr>
+
+
+
+            <%
+            List srdisququalist = inspiteminfo.getDisqualificationReasonlist();
+
+            HashMap disqual = null;
+            if (srdisququalist != null) {
+            for (int i = 0; i < srdisququalist.size(); i++) {
+            disqual = (HashMap) srdisququalist.get(i);
+            %>
+
+
+
+            <tr class="modifyTableButtonTd">
+                <td ><input type="checkbox" name="chkSelf" <%if(declgoodsbo.getExtDisquaCauseCode().indexOf((String)disqual.get("Code"))!=-1){%> checked <%}%>  value="<%=disqual.get("Code")%>" onClick="isCheck(this,'EXT_DISQUA_CAUSE_CODE')"></td>
+                <td ><%=disqual.get("Name")%> </td>
+                <td > <%=disqual.get("Code")%></td>
+            </tr > 
+            <%
+            }
+            }
+            %>
+            <tr > 
+                <td colspan="12"  align="right">
+                    <input name="actionbut12" type="button" class="button" onClick="MM_showHideLayers('Layer4','','hidden');" value="确定" funType="searchData">
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+</div>  
