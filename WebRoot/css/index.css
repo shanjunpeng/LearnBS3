@@ -1,0 +1,84 @@
+body {
+	background-color: #eee;
+	font-size: 14px;
+}
+
+.main {
+	width: 768px;
+}
+
+.bg {
+	BACKGROUND-IMAGE: url(../images/index.jpg);
+	BACKGROUND-REPEAT: no-repeat;
+	margin-top: 70px;
+	/*border:1px solid gray;*/
+	width: 768px;
+	height: 400px;
+}
+
+.sysname {
+	padding-top: 26px;
+	font-size: 24px;
+	color: #003399;
+	text-indent: 50px;
+	font-family: "»ªÎÄÖÐËÎ";
+	font-weight: bold;
+}
+
+.sysname_e {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #547DCC;
+	font-weight: bold;
+	text-indent: 55px;
+}
+
+.login div { /*border:1px solid gray;*/
+	margin-bottom: 3px;
+}
+
+.login {
+	background-color: #eee;
+	margin-top: 20px;
+	margin-left: 285px;
+	width: 453px;
+	height: 260px;
+	border: 1px solid gray;
+	padding: 17px;
+}
+
+.login input { /*width: 160px;*/
+	
+}
+
+.login .buttons {
+	margin-top: 18px;
+}
+
+.buttons button {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.btn-login {
+	width: 100px;
+}
+
+.downloads {
+	margin-top: 20px;
+}
+
+.downloads button {
+	width: 220px;
+	height: 70px;
+	margin-left: 20px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.telphone {
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 17px;
+	color: red;
+}

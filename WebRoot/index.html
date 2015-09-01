@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>进口食品进出口商备案系统</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=gbk">
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<script type="text/javascript" language="javascript">
+			function onloadPage() {
+			    //validBrowserVersion();
+			}
+			
+			function validBrowserVersion() //用window的onload事件，窗体加载完毕的时候
+			{
+			    var agent = navigator.userAgent.toLowerCase();
+			    var regStr_ie = /msie [\d.]+;/gi; //IE
+			    var regStr_ff = /firefox\/[\d.]+/gi; //FireFox
+			    var regStr_chrome = /chrome\/[\d.]+/gi; //Chrom
+			    var regStr_saf = /safari\/[\d.]+/gi; //Safari
+			    //IE
+			    if (agent.indexOf("msie") > 0) {
+			        var vs = agent.match(regStr_ie);
+			        var vnum = agent.substr(30, 1);
+			        if (vnum > 10 || vnum < 6) {
+			            alert("请使用IE(Internet Explorer)6、7、8、9和10版本的浏览器。IE10版本请使用兼容模式！");
+			            return false;
+			        }
+			    } else {
+			        alert("请使用IE(Internet Explorer)6、7、8、9和10版本的浏览器。IE10版本请使用兼容模式！");
+			        return false;
+			    }
+			}
+			/**
+			 *  弹出居中页面
+			 */
+			function openWindow(mypage, myname, w, h, scroll) {
+			    if (mypage == '#') {
+			        return;
+			    }
+			    LeftPosition = (screen.width) ? (screen.width - w) / 2 : 0;
+			    TopPosition = (screen.height) ? (screen.height - h) / 2 : 0;
+			    settings = 'height=' + h + ',width=' + w + ',top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=' + scroll + ',resizable=1,titlebar=0';
+			    win = window.open(mypage, myname, settings);
+			    return win;
+			}
+			
+			function openPage() {
+			    openWindow('./ghdowload.html', 'newwindow', '800', '450', '1');
+			}
+			
+			function openPage2() {
+			    openWindow('./ghdowload2.html', 'newwindow', '800', '450', '1');
+			}
+		</script>
+
+		<!-- Bootstrap core CSS -->
+		<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Bootstrap theme 
+		<link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+		-->
+		
+		<style type="text/css">
+			div {
+				margin-bottom: 5px;
+				/*border: 1px solid black;*/
+			}
+			body {
+				background-image: url(./images/navigation/bg.jpg);
+				background-repeat: repeat-x;
+				font-size:14px;
+				font-family: "宋体";
+			}
+			.main{
+				width: 880px;
+			}
+			.title{
+				margin-left: 15px;
+			}
+			.download button{
+				width: 180px;
+				height: 70px;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			.telphone div{
+				
+				margin: 0;
+				padding: 0;
+			}
+			.telphone img{
+				width: 45px;
+				margin-left: 7px;
+			}
+			.telphone .name{
+				font-size: 14px;
+				font-weight: bold;
+			}
+			.telphone .phoneNumber{
+				font-size: 16px;
+				font-weight: bold;
+				color:red;
+				margin-left: 50px;
+			}
+		</style>
+	</head>
+	<body onLoad="onloadPage()">
+		<div class="main container theme-showcase" role="main">
+			<div class="title">
+				<img src="./images/navigation/1_02.jpg" alt="进口食品进出口商备案系统">
+			</div>
+			<div class="portal text-center ">
+				<div class="col-md-4">
+					<img src="./images/navigation/3.jpg"
+						alt="您好！备案或登陆时，请详细查看公告、用户手册、管理须知！" usemap="#Map5">
+				</div>
+				<div class="col-md-4">
+					<img src="./images/navigation/1.jpg"
+						alt="您好！备案或登陆时，请详细查看公告、用户手册、管理须知！" usemap="#Map3">
+				</div>
+				<div class="col-md-4">
+					<img src="./images/navigation/2.jpg"
+						alt="您好！备案或登陆时，请详细查看公告、用户手册、管理须知！" usemap="#Map4">
+				</div>
+			</div>
+			<div class="download col-md-12">
+				<img src="./images/navigation/1_11.png" alt="下载">
+					<br>
+				<div class="col-md-2 text-center"></div>	
+				<div class="col-md-4 text-center">
+				<button class="btn btn-success" onclick="openPage();">
+					总局公告下载
+				</button>
+				</div>
+				<div class="col-md-4 text-center">
+				<button class="btn btn-info" onclick="openPage2();">
+					备案管理须知下载
+				</button>
+				</div>	
+				<div class="col-md-2 text-center"></div>
+				
+			</div>
+			<div class="telphone col-md-12">
+				<div class="col-md-12">
+					<img class="pull-left" src="images/navigation/telephone.png" alt="客户服务电话" >
+					<div class="pull-left">
+						<div class="name">客户服务电话</div>
+						<div class="text-uppercase">Customer service phone</div>
+					</div>
+				</div>
+				<div class="phoneNumber col-md-12">400-665-9988</div>
+			</div>
+		</div>
+		<map id="Map3" name="Map3">
+			<area shape="rect" coords="150,135,270,163" alt=""
+				href="http://tmire.eciq.cn/entire" target="_blank">
+			<area shape="rect" coords="0,163,270,200" alt=""
+				href="http://tmire.eciq.cn/entire/controller?SERVICE_ID=REGISTRY_EXPORT_ENTERPRISE_SEARCH_SERVICE&newsearch=true&recordperpage=15"
+				target="_blank">
+		</map>
+		<map id="Map4" name="Map4">
+			<area shape="rect" coords="150,135,270,163" alt=""
+				href="http://tmire.eciq.cn/conire" target="_blank">
+			<area shape="rect" coords="0,163,270,200" alt=""
+				href="http://tmire.eciq.cn/conire/controller?SERVICE_ID=REGISTRY_CONSIGNEE_SHOW_SERVICE&newsearch=true&recordperpage=15"
+				target="_blank">
+		</map>
+		<map name="Map5">
+			<area shape="rect" coords="150,135,270,163"
+				href="http://tmire.eciq.cn/entire/manu-index.jsp" target="_blank">
+			<area shape="rect" coords="0,163,270,200"
+				href="http://tmire.eciq.cn/entire/controller?SERVICE_ID=REGISTRY_MANU_ENTERPRISE_SEARCH_SERVICE&newsearch=true&recordperpage=15"
+				target="_blank">
+		</map>
+	</body>
+</html>

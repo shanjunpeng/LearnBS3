@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<TITLE>欢迎访问境外生产企业信息记录系统</TITLE>
+		<META http-equiv=Content-Type content="text/html;charset=gbk">
+		<!-- Bootstrap core CSS -->
+		<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="./css/index.css" rel="stylesheet"> 
+		<script language="javascript">
+			window.onload=function(){
+				//alert(123);
+				document.getElementById("downloadUserManu").onclick=function(){
+					downloadfile('./help/manu_help-V1.0.doc');
+				};
+				document.getElementById("downloadAnnouncement").onclick=function(){
+					NewWindow('./ghdowload.html', 'newwindow', '800', '450', '1');
+				};
+				document.getElementById("downloadNotice").onclick=function(){
+					downloadfile('./help/food-20140207.pdf');
+				};
+				document.getElementById("loginBtn").onclick=function(){
+					login();
+				};
+				document.getElementById("firstRegitryBtn").onclick=function(){
+				};
+				document.getElementById("findQueryNoBtn").onclick=function(){
+				};
+				
+				
+			}
+    
+            function frmSubmit()
+            {
+                if(window.event.keyCode==13)
+                {
+                    form1.submit();
+                }
+            }
+            function login()
+            {
+                if(!itownObjsMgr.validateAll(form1))
+                {
+                    return;
+                }
+                //var submitUrl=".//controller?SERVICE_ID=FRAMEWORK_LOGIN_SERVICE"; 
+                //var submitUrl=".//controller?SERVICE_ID=REGISTRY_RECORD_APP_RECORD_APP_UPDATE_SERVICE";
+                var submitUrl="./controller?SERVICE_ID=REGISTRY_MANU_UPDATE_SERVICE";
+                document.form1.action=submitUrl;
+                document.form1.submit();
+            }
+	
+	
+            function loginIn()
+            {
+                var submitUrl="./controller?SERVICE_ID=REGISTRY_MANU_TO_REGE_SERVICE&newsearch=true&recordperpage=10&defSearch=true";
+                document.form1.action=submitUrl;
+                document.form1.submit();
+            }
+
+
+            /**
+             * 打开一个新窗口
+             * @param myURL:要打开的新窗口的URL。
+             * @param winWidth 窗口宽度
+             * @param winHeight 窗口高度
+             */
+            function openWindowPage(myURL,winWidth,winHeight){
+                var myWidth=winWidth;
+                var myHeight=winHeight;
+                if(myWidth==undefined || myWidth==null || myWidth==""){
+                    myWidth="400";
+                }
+                if(myHeight==undefined || myHeight==null || myHeight==""){
+                    myHeight="420";
+                }
+                var winStyle="location=no,menubar=no,toolbar=no,scrollbars=yes,resizable=yes";
+                winStyle+=",width="+myWidth+",height="+myHeight+",status=yes,top=100,left=200";
+
+                var openWindow=window.open(myURL,"_blank",winStyle);
+                //var openWindow=window.open(myURL);
+
+                return openWindow;
+            }
+            function show(){
+                var o = document.getElementById("random");
+                var timenow = new Date().getTime();
+                o.src="./yzm/random.jsp?d="+timenow;
+            }
+
+            /**
+             *  弹出居中页面 
+             */
+            function NewWindow(mypage,myname,w,h,scroll){ 
+                if(mypage=='#'){
+                    return;
+                }
+                LeftPosition = (screen.width) ? (screen.width-w)/2 : 0; 
+                TopPosition = (screen.height) ? (screen.height-h)/2 : 0; 
+                settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable=1,titlebar=0' ;
+
+                win = window.open(mypage,myname,settings) 
+                return win;
+            } 
+
+            function downloadfile(url){
+                window.location=url;
+            }
+        </script>
+	</head>
+	<body>
+	    <div class="main container">
+	        <div class="bg">
+	            <div class="sysname">
+	                <p>境外生产企业信息记录系统</p>
+	            </div>
+	            <div class="sysname_e">
+	                <p>Information Recording System for Manufacturer Overseas</p>
+	            </div>
+	            <form name="form1" method="post" class="form-horizontal" action="./controller?SERVICE_ID=FRAMEWORK_LOGIN_SERVICE" onKeyDown="enterToSearch_public(this)" onsubmit="return itownObjsMgr.validateAll(form1)">
+	                <div class="login">
+	                    <div class="form-group">
+	                        <label for="inputRecordNo" class="col-md-3 control-label">信息记录号 Record NO.</label>
+	                        <div class="col-md-9">
+	                            <input class="form-control" id="userId" name="userId" JSObjName="Text" chsname="信息记录号[Record NO.]" nullable="false" size="14" value="" maxlength='11'>
+	                        </div>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="inputRecordNo" class="col-md-3 control-label">查 询 号 Query No.</label>
+	                        <div class="col-md-9">
+	                            <input class="form-control" type="password" name="password" JSObjName="Text" chsname="查询号[Query No.]" nullable="false" size="14" maxlength='12' onKeyPress="javascript:frmSubmit();">
+	                        </div>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="inputRecordNo" class="col-md-3 control-label">附加码 Extra-NO.</label>
+	                        <div class="col-md-5">
+	                            <input class="form-control pull-left" name="yzm" id="yzm" JSObjName="Text" nullable="false" chsname="附加码[Extra-code.]" maxlength="4" />
+	                        </div>
+	                        <div class="col-md-4">
+	                            <a href="javascript:void(0);" onclick="show();return false;">
+	                                <img border="0" src="./yzm/random.jsp" style="width: 80px;height:32px" id="random" />
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <div class="buttons text-right">
+	                        <button id="loginBtn"  
+	                        class="btn-login btn btn-lg btn-success">登&nbsp;&nbsp;&nbsp;&nbsp;录
+	                            <br>Login</button>
+	                        <button id="firstRegitryBtn" class="btn btn-lg btn-primary">初次申请
+	                            <br>Initial Registration</button>
+	                        <button id="findQueryNoBtn" class="btn btn-lg btn-warning">找回查询号
+	                            <br>Find Query NO.</button>
+	                    </div>
+	                </div>
+	            </form>
+	        </div>
+	        <div class="downloads">
+	            <button id="downloadUserManu" class="btn btn-lg btn-default">境外生产企业用户手册下载</button>
+	            <button id="downloadAnnouncement" class="btn btn-lg btn-default">总局公告下载</button>
+	            <button id="downloadNotice" class="btn btn-lg btn-default">备案管理须知下载</button>
+	        </div>
+	        <div class="telphone">
+	            <label>客户服务电话：400-665-9988</label>
+	        </div>
+	    </div>
+	</body>
+</html>
